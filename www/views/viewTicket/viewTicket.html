@@ -5,11 +5,14 @@
   <div ng-repeat="message in messages">
     <div class="list list-inset">
       <div class="item item-divider">
-        {{message.ticket.id}}
+        <strong>Ticket Number: </strong>{{message.user}}
       </div>
-      <h2 class="item">{{message.ticket.firstname}} {{message.ticket.lastname}}</h2>
-      <p class="item">{{message.ticket.message}}</p>
-      <p class="item">{{message.ticket.created_at | date}}</p>
+      <h2 class="item"><strong>Ticket Started By: </strong>{{message.firstname}} {{message.lastname}}</h2>
+      <p class="item"><strong>Issue Description: </strong>{{message.message}}</p>
+      <p class="item"><strong>Ticket Status: </strong><span class="badge badge-assertive">New</span>{{message.status}}</p>
+
+      <p class="item"><strong>Ticket Created on: </strong> {{message.created_at | date}}</p>
+
     </div>
   </div>
   </ion-content>

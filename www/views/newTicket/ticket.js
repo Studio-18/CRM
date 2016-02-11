@@ -12,15 +12,35 @@ console.log('controller working')
     
     var ticket = {}
     ticket.firstname  = this.ticket.firstname
-    ticket.lastname   = this.ticket.lastname
+    ticket.project_code   = this.ticket.project_code
     ticket.message    = this.ticket.message
     ticket.created_at = Date.now()
-    ticket.id         = window.localStorage.id
+    ticket.user       = window.localStorage.id
+    
+    ticket.status     = "new"
+    
+
+
+     var who = new Firebase('https://authapp1.firebaseio.com/profile');
+     var who2 = who.orderByChild('id').equalTo(window.localStorage.id).on('child_added', function(snapshot){
+     whats = (snapshot.key())
+     console.log(whats)
+
+   })
 
   
-    var ref = new Firebase('https://authapp1.firebaseio.com/message_list');
-    var newTicketRef = ref.push()
-    newTicketRef.set({'ticket': ticket})
+    var root = new Firebase('https://authapp1.firebaseio.com');
+    var id = root.child('/message_list').push()
+    // var newTicketRef = ref.push()
+    id.set(ticket, function(err){
+      if(!err) {
+        var name =id.key()
+        console.log(name)
+        root.child("/profile/" + whats + "/projects/").push(name)
+      }
+    })
+
+
 
 //     ref.on("value", function(snapshot) {
 //   console.log(snapshot.val());

@@ -14,10 +14,14 @@ angular.module('App').controller('profileController', function ($scope, $state,$
         console.log($scope.profile)
        
       })
-      
+
+
+    var projectData = new Firebase('https://authapp1.firebaseio.com/message_list');
+
+      projectData.orderByChild('project_code').equalTo('111').on('value', function(snapshot){
+        console.log(snapshot.val())
+      })
   
 
-  
-
-}
+  }
 );

@@ -11,7 +11,9 @@ angular.module('App').factory('Auth', function(FURL, $firebaseAuth, $firebaseArr
 				id: uid,
         email: user.email,
         gravatar: get_gravatar(user.email, 40),
-				registered_in: Date()
+				registered_in: Date(),
+        name: user.name,
+        project: user.project
       };
 
       var profileRef = $firebaseArray(ref.child('profile'));
