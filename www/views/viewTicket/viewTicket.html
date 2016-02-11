@@ -1,0 +1,16 @@
+<ion-view title="recent tickets">
+  <ion-content>
+
+
+  <div ng-repeat="message in messages">
+    <div class="list list-inset">
+      <div class="item item-divider">
+        {{message.ticket.id}}
+      </div>
+      <h2 class="item">{{message.ticket.firstname}} {{message.ticket.lastname}}</h2>
+      <p class="item">{{message.ticket.message}}</p>
+      <p class="item">{{message.ticket.created_at | date}}</p>
+    </div>
+  </div>
+  </ion-content>
+</ion-view>
