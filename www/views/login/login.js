@@ -21,6 +21,7 @@ angular.module('App').controller('loginController', function ($scope, $state,$co
             //console.log(obj.email);
             $localStorage.email = obj.email;
             $localStorage.userkey = userkey;
+            window.localStorage.id = obj.id
 
               Utils.hide();
               $state.go('home');

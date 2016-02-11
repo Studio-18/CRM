@@ -37,6 +37,7 @@ angular.module('App').factory('Auth', function(FURL, $firebaseAuth, $firebaseArr
         .then(function(data) {
           // store user data in Firebase after creating account
 					//console.log("datos del usuario:" + JSON.stringify(data));
+          console.log('here: ', data)
           return Auth.createProfile(data.uid, user);
         });
     },
