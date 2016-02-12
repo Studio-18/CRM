@@ -2,7 +2,7 @@ angular.module('App')
 
 .controller('viewTicketController', function ($scope, $state,$cordovaOauth, $localStorage, $location,$http,$ionicPopup, $firebaseObject,$firebaseArray, Auth, FURL, Utils) {
 console.log('controller working')
-
+ var vm = this
   // Get a database reference to our posts
 // var ref = new Firebase("https://authapp1.firebaseio.com/message_list");
 // // Attach an asynchronous callback to read the data at our posts reference
@@ -11,7 +11,7 @@ console.log('controller working')
   
 //    var messages = snapshot.val()
 //    $scope.messages = messages
-
+    
    
 
 //    console.log($scope.messages)
@@ -23,16 +23,24 @@ console.log('controller working')
 //  }, function (errorObject) {
 //    console.log("The read failed: " + errorObject.code);
 //  });
+  var hi
+  var ref = new Firebase("https://authapp1.firebaseio.com/message_list/").equalTo(window.localStorage.project_code);
 
-  var ref = new Firebase("https://authapp1.firebaseio.com/message_list");
-
-    ref.orderByChild("project_code").equalTo(window.localStorage.project_code).on('value', function(snapshot){
-        
-        console.log(snapshot.val(), "this the response from ref of projec code")
-        $scope.messages = snapshot.val()
-
-
-      })
-
-   
+    var poop = ref.orderByChild("project_code")
+    .equalTo(window.localStorage.project_code)
+    .on('value', function(response){
+        hi = response
+        // $scope.messages = response.val()
+        console.log(response.val())
+      } )
+    var ar = $firebaseArray(ref)
+    console.log(ar)
+    $scope.messages = ar
+    vm.touching = function(){
+      // var test = 
+      console.log()
+    }
+       
   })
+
+  

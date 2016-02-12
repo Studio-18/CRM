@@ -42,6 +42,12 @@ $stateProvider
       controller: 'profileController'
     })
 
+    .state('editTicket', {
+      url: '/edit/:ticket_id',
+      templateUrl: 'views/editTicket/editTicket.html',
+      controller: 'editTicketController'
+    })
+
 $urlRouterProvider.otherwise("/login");
 })
 // Changue this for your Firebase App URL.

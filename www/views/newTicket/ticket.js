@@ -6,6 +6,7 @@ console.log('controller working')
   vm = this
   console.log('working')
 
+
   
 
   $scope.newTicket = function() {
@@ -15,8 +16,7 @@ console.log('controller working')
     ticket.project_code   = this.ticket.project_code
     ticket.message    = this.ticket.message
     ticket.created_at = Date.now()
-    ticket.user       = window.localStorage.id
-    
+    ticket.user       = window.localStorage.id 
     ticket.status     = "new"
     
 
