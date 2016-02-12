@@ -12,12 +12,13 @@ console.log('controller working')
   $scope.newTicket = function() {
     
     var ticket = {}
-    ticket.firstname  = this.ticket.firstname
+    ticket.feature  = this.ticket.feature
     ticket.project_code   = this.ticket.project_code
     ticket.message    = this.ticket.message
     ticket.created_at = Date.now()
     ticket.user       = window.localStorage.id 
     ticket.status     = "new"
+    ticket.priority   = this.ticket.priority
     
 
 

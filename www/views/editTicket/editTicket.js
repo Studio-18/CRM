@@ -1,13 +1,22 @@
 angular.module('App').controller('editTicketController', function ($scope, $state, $stateParams,$cordovaOauth, $localStorage, $location,$http,$ionicPopup, $firebaseObject, Auth, FURL, Utils) {
   // console.log('editTicketController working ')
-  // console.log($stateParams)
+   console.log('passed params :', $stateParams)
 
-  var ref = new Firebase("https://authapp1.firebaseio.com/message_list")
+   var hello = $stateParams.ticket_id
+   console.log(hello)
+var hel = "https://authapp1.firebaseio.com/message_list/"
+   var hello1 = hel.concat(hello)
+   console.log(hello1)
+  var ref = new Firebase(hello1 ).on("value", function(snapshot) {
+  console.log(snapshot.val());  // Alerts "San Francisco"
+  $scope.message = snapshot.val()
+  console.log($scope.message)
+});
+    
+
    // var test = snapshot.val()
-    var newChildRef = ref.push()
+    
 
-        console.log(newChildRef.key())
-        
   // var ref = new Firebase("https://authapp1.firebaseio.com/message_list");
 
   //   ref

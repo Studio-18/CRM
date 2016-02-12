@@ -23,23 +23,39 @@ console.log('controller working')
 //  }, function (errorObject) {
 //    console.log("The read failed: " + errorObject.code);
 //  });
-  var hi
-  var ref = new Firebase("https://authapp1.firebaseio.com/message_list/").equalTo(window.localStorage.project_code);
+//------------------------------------------------
+  // var hi
+  // var ref = new Firebase("https://authapp1.firebaseio.com/message_list/");
 
-    var poop = ref.orderByChild("project_code")
-    .equalTo(window.localStorage.project_code)
-    .on('value', function(response){
-        hi = response
-        // $scope.messages = response.val()
-        console.log(response.val())
-      } )
-    var ar = $firebaseArray(ref)
-    console.log(ar)
-    $scope.messages = ar
-    vm.touching = function(){
-      // var test = 
-      console.log()
-    }
+  //   var poop = ref.orderByChild("project_code")
+  //   .equalTo(window.localStorage.project_code)
+  //   .on('value', function(response){
+  //       hi = response
+  //       // $scope.messages = response.val()
+  //       console.log(response.val())
+  //     } )
+  //   var ar = $firebaseArray(ref)
+  //   console.log(ar)
+  //   $scope.messages = ar
+  //   // vm.touching = function(){
+  //   //   // var test = 
+  //   //   console.log()
+  //   // }
+
+    //------------------------------------------------
+
+    var ref = new Firebase("https://authapp1.firebaseio.com/message_list/");
+
+      var poop = ref.orderByChild("project_code")
+     .equalTo(window.localStorage.project_code)
+     
+
+     var hello = $firebaseArray(poop)
+      console.log(hello)
+
+
+      $scope.messages = hello
+   
        
   })
 
