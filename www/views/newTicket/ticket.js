@@ -19,6 +19,7 @@ console.log('controller working')
     ticket.user       = window.localStorage.id 
     ticket.status     = "new"
     ticket.priority   = this.ticket.priority
+    ticket.created_by = window.localStorage.user
     
 
 
@@ -40,6 +41,8 @@ console.log('controller working')
         root.child("/profile/" + whats + "/projects/").push(name)
       }
     })
+
+    $location.path('/viewTicket');
 
 
 

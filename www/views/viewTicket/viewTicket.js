@@ -2,6 +2,14 @@ angular.module('App')
 
 .controller('viewTicketController', function ($scope, $state,$cordovaOauth, $localStorage, $location,$http,$ionicPopup, $firebaseObject,$firebaseArray, Auth, FURL, Utils) {
 console.log('controller working')
+
+//----------sorting
+$scope.sortType = 'message'
+$scope.sortReverse = false 
+$scope.searchMessage = ''
+
+
+//-------
  var vm = this
   // Get a database reference to our posts
 // var ref = new Firebase("https://authapp1.firebaseio.com/message_list");
@@ -55,6 +63,9 @@ console.log('controller working')
 
 
       $scope.messages = hello
+
+
+
    
        
   })

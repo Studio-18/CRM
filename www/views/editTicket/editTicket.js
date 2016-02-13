@@ -12,6 +12,8 @@ var hel = "https://authapp1.firebaseio.com/message_list/"
   $scope.message = snapshot.val()
   console.log($scope.message)
 });
+
+
     
 
    // var test = snapshot.val()
