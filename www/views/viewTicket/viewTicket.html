@@ -15,31 +15,50 @@
 
     </div>
   </div> -->
-        <form>
-    <div class="form-group">
-      <div class="input-group">
-        <div class="input-group-addon"><i class="ion ion-search"></i></div>
+       
 
-        <input type="text" class="form-control" placeholder="Search" ng-model="searchMessage">
-
-      </div>      
-    </div>
-  </form>
+      <div class="bar bar-header item-input-inset">
+  <label class="item-input-wrapper">
+    <i class="icon ion-ios-search placeholder-icon"></i>
+    <input type="search" placeholder="Search" ng-model="searchMessage">
+  </label>
+  <button class="button button-clear">
+    Cancel
+  </button>
+</div>
 
         <div class="row header">
-          <div class="col col-20">Date</div>
+          <!-- <div class="col col-20">Date</div> -->
 
             
+            <a class="col message-sort"
+             href="#" ng-click="sortType = 'created_at';sortReverse = !sortReverse">
+            Priority 
+            
+          </a>
+            
+          <a class="col col-10 message-sort"
+             href="#" ng-click="sortType = 'status';sortReverse = !sortReverse">
+            Status
+            
+          </a>
 
 
-          <div class="col col-10">Status</div>
-          <div class="col"> 
-            <a href="#" ng-click="sortType = 'message';sortReverse = !sortReverse">
+          
+          <a class="col message-sort"
+             href="#" ng-click="sortType = 'message';sortReverse = !sortReverse">
             Issue 
+            <span ng-show="sortType == 'message' && !sortReverse" class="ion-ios-arrow-down"></span>
+          <span ng-show="sortType == 'message' && sortReverse" class="ion-ios-arrow-up"></span>
             <span ng-show="sortType == 'name'" class="fa fa-caret-down"></span>
           </a>
-          </div>
-          <div class="col">Priority</div>
+          
+          
+          <a class="col message-sort"
+             href="#" ng-click="sortType = 'priority';sortReverse = !sortReverse">
+            Priority 
+            
+          </a>
           <div class="col">Dev Comment</div>
           <div class="col col-10"></div>
         </div>
@@ -50,7 +69,7 @@
           <div class="col">{{message.message}}</div>
           
           <div class="col">{{message.priority}}</div>
-          <div class="col">{{data.account}}</div>
+          <div class="col">{{message.devMessage}}</div>
           <div class="col col-10">
                
                 <a class="button button-small button-energized" ng-href="#/edit/{{message.$id}}">update</a>

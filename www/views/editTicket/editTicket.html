@@ -37,7 +37,7 @@
   </div>
     
     <div class="item">
-      <span></span><button class="button button-calm">edit status</button>
+      <span></span><button ng-click="update()" class="button button-calm">edit status</button>
       
     </div>
     <label class="item item-input">
@@ -50,7 +50,7 @@
         <div class="input-label">
           Update Status
         </div>
-        <select ng-model="ticket.priority">
+        <select ng-model="ticket.status">
           <option value="urgent">New</option>
           <option value="high">In Queue</option>
           <option value="medium">In Process</option>

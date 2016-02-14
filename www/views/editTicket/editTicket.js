@@ -14,6 +14,29 @@ var hel = "https://authapp1.firebaseio.com/message_list/"
 });
 
 
+  $scope.update = function(){
+    console.log(hello1)
+
+    var ticket = {}
+    ticket.devMessage  = this.ticket.devMessage
+    ticket.status      = this.ticket.status
+    console.log(ticket.devMessage)
+
+    var ref = new Firebase(hello1)
+      
+
+      ref.update({
+        'devMessage' : ticket.devMessage
+      })
+
+
+
+    this.ticket.devMessage= ''
+
+
+  }
+
+
     
 
    // var test = snapshot.val()

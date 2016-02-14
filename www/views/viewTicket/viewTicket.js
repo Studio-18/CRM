@@ -4,7 +4,7 @@ angular.module('App')
 console.log('controller working')
 
 //----------sorting
-$scope.sortType = 'message'
+$scope.sortType = ''
 $scope.sortReverse = false 
 $scope.searchMessage = ''
 

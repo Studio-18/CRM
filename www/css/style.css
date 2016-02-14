@@ -145,3 +145,7 @@ label.item.valid-lr {
   color: white;
   border-radius: 5px;
 }
+
+.message-sort {
+  text-decoration: none;
+}
