@@ -21,6 +21,12 @@ $stateProvider
       url: '/home',
       templateUrl: 'views/home/home.html',
       controller:'homeController'
+      
+    })
+    .state('home.menu', {
+      url: '/home',
+      templateUrl: 'templates/menu.html',
+      controller: 'homeController'
     })
 
     .state('ticket', {

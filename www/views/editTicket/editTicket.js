@@ -27,6 +27,7 @@ var hel = "https://authapp1.firebaseio.com/message_list/"
 
       ref.update({
         'devMessage' : ticket.devMessage
+        
       })
 
 
