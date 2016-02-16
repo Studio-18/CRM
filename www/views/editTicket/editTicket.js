@@ -26,13 +26,18 @@ var hel = "https://authapp1.firebaseio.com/message_list/"
       
 
       ref.update({
-        'devMessage' : ticket.devMessage
-        
+        'devMessage' : ticket.devMessage,
+        'status' : ticket.status
+
       })
 
 
 
+
+
     this.ticket.devMessage= ''
+
+    $location.path('/viewTicket');
 
 
   }
