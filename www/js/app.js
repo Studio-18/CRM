@@ -1,5 +1,5 @@
 'Use Strict';
-angular.module('App', ['ionic','ngStorage', 'ngCordova','firebase','ngMessages'])
+angular.module('App', ['ionic','ngStorage', 'ngCordova','firebase','ngMessages', 'ngFileUpload' ])
 .config(function($stateProvider, $urlRouterProvider) {
 $stateProvider
     .state('login', {
@@ -23,7 +23,13 @@ $stateProvider
       controller:'homeController'
       
     })
-    
+    .state('upload', {
+      url: '/upload',
+      templateUrl: 'views/uploadImage/upload.html',
+      controller:'uploadController'
+      
+    })
+
 
     .state('ticket', {
       url: '/ticket',
@@ -64,5 +70,6 @@ $urlRouterProvider.otherwise("/login");
     if(window.StatusBar) {
       StatusBar.styleDefault();
     }
-  });
+  })
+
 });

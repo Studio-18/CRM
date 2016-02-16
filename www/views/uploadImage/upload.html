@@ -1,0 +1,37 @@
+<ion-view>
+  <ion-content>
+      <div id="direct_upload" 
+        ngf-drop="uploadFiles($files)"
+        ngf-drag-over-class="dragOverClass($event)"
+        ng-model="files"
+        ng-multiple="true">
+    
+        <form name="myForm">
+        <fieldset>
+      
+      
+      
+      <input type="file" ngf-select ng-model="picFile" name="file"    
+             accept="image/*" ngf-max-size="2MB" required
+             ngf-model-invalid="errorFiles">
+      <i ng-show="myForm.file.$error.required">*required</i><br>
+      <i ng-show="myForm.file.$error.maxSize">File too large 
+          {{errorFiles[0].size / 1000000|number:1}}MB: max 2M</i>
+      <img width="100px" height="auto" ng-show="myForm.file.$valid" ngf-thumbnail="picFile" class="thumb"> <button ng-click="picFile = null" ng-show="picFile">Remove</button>
+      <br>
+      <button ng-disabled="!myForm.$valid" 
+              ng-click="uploadFiles(picFile)">Submit</button>
+      <span class="progress" ng-show="picFile.progress >= 0">
+        <div style="width:{{picFile.progress}}%" 
+            ng-bind="picFile.progress + '%'"></div>
+      </span>
+      <span ng-show="picFile.result">Upload Successful</span>
+      <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
+    </fieldset>
+    <br>
+  </form> 
+</div>
+
+  </ion-content>
+
+</ion-view>
