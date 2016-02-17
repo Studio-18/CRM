@@ -36,11 +36,16 @@ console.log('controller working')
     // var newTicketRef = ref.push()
     id.set(ticket, function(err){
       if(!err) {
+
         var name =id.key()
         console.log(name)
         root.child("/profile/" + whats + "/projects/").push(name)
+        Auth.current = name
+        console.log(Auth.current)
+
       }
     })
+    
 
     $location.path('/viewTicket');
 
@@ -53,8 +58,7 @@ console.log('controller working')
 // });
 
 
-    
-    console.log(ticket)
+
 
   }
 
