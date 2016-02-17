@@ -186,13 +186,18 @@ function findxy(res, e) {
               console.log(ticket.image)
 
 
-              var root = new Firebase('https://authapp1.firebaseio.com/message_list');
+              
+              
+              var hel = "https://authapp1.firebaseio.com/message_list/"
+              console.log(Auth.current)
+              
+              var root1 = hel.concat(Auth.current)
+              console.log(root1)
+              var root = new Firebase(root1);
+              var id = root.child('/images').push()
 
-              root.update({
-        'images' : ticket.image
+                id.set(ticket)
         
-
-      })
 
       //         .then(function(response ){
       //   // call function to refresh page

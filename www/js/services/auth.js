@@ -3,8 +3,11 @@ angular.module('App').factory('Auth', function(FURL, $firebaseAuth, $firebaseArr
 	var ref = new Firebase(FURL);
 	var auth = $firebaseAuth(ref);
 
+
+
 	var Auth = {
 		user: {},
+    current: '',
 
     createProfile: function(uid, user) {
       var profile = {
