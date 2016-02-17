@@ -1,5 +1,5 @@
 <ion-view>
-  <ion-content>
+  <ion-content >
       <div id="direct_upload" 
         ngf-drop="uploadFiles($files)"
         ngf-drag-over-class="dragOverClass($event)"
@@ -17,10 +17,11 @@
       <i ng-show="myForm.file.$error.required">*required</i><br>
       <i ng-show="myForm.file.$error.maxSize">File too large 
           {{errorFiles[0].size / 1000000|number:1}}MB: max 2M</i>
-      <img width="100px" height="auto" ng-show="myForm.file.$valid" ngf-thumbnail="picFile" class="thumb"> <button ng-click="picFile = null" ng-show="picFile">Remove</button>
+      <img id="testImage" width="200px" height="auto" ng-show="myForm.file.$valid" ngf-thumbnail="picFile" class="thumb"> <button ng-click="picFile = null" ng-show="picFile">Remove</button>
       <br>
       <button ng-disabled="!myForm.$valid" 
-              ng-click="uploadFiles(picFile)">Submit</button>
+              
+              ng-click="editFiles(picFile)">Submit</button>
       <span class="progress" ng-show="picFile.progress >= 0">
         <div style="width:{{picFile.progress}}%" 
             ng-bind="picFile.progress + '%'"></div>
@@ -31,6 +32,13 @@
     <br>
   </form> 
 </div>
+
+<p>Canvas:</p>
+<canvas id="myCanvas" width="240" height="297" style="border:1px solid #d3d3d3;">
+
+</canvas>
+
+
 
   </ion-content>
 
