@@ -1,0 +1,80 @@
+<ion-view>
+  <ion-content>
+  <h2>Updates</h2>
+  <div class="list list-inset">
+    <div class="row">
+      <div class="item col-33">
+      <p><strong>Created By:</strong> {{message.created_by}}</p>
+    </div>
+
+    <div class="item col-33">
+      <p><strong>Date:</strong> {{message.created_at}}</p>
+    </div>
+
+    <div class="item col-33">
+      <p><strong>Project Code:</strong> {{message.project_code}}</p>
+    </div>
+
+
+      </div>
+    </div>
+
+    <div class="item">
+      <p><strong>Issue:</strong> {{message.feature}}</p>
+    </div>
+    <div class="item">
+      <p class="{{message.status}}"><strong>Status:</strong> <span>{{message.status}}</span></p>
+      <p class="badge badge-assertive">Urgent</p>
+    </div>
+    <div class="item">
+      <p><strong>Priority:</strong> {{message.priority}}</p>
+    </div>
+    <div class="item item-text-wrap">
+      <p><strong>Description:</strong> {{message.message}}</p>
+    </div>
+
+    <div class="item item-divider padding">
+    <div class="item-button-right padding">
+    Developer Update
+    <button ng-click="update()" class="button button-calm item-button-right">edit status</button>
+  </div>
+    <!-- Developer Update
+    <button ng-click="update()" class="button button-calm item-button-right">edit status</button> -->
+  </div>
+    
+    
+    <label class="item item-input">
+        <input type="text" placeholder="New Dev Message" ng-model="ticket.devMessage">
+    </label>
+    <label class="item item-input">
+        <input type="text" placeholder="Estimated Time to completion" ng-model="ticket.estimate">
+    </label>
+    <label class="item item-input item-select">
+        <div class="input-label">
+          Update Status
+        </div>
+        <select ng-model="ticket.status">
+          <option value="New">New</option>
+          <option value="In Queue">In Queue</option>
+          <option value="In Process">In Process</option>
+          <option value="Completed">Completed</option>
+        </select>
+      </label>
+
+
+
+    
+
+</div>
+
+
+  
+
+  
+    
+
+
+
+  </ion-content>
+
+</ion-view>

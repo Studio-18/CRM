@@ -1,5 +1,5 @@
 'Use Strict';
-angular.module('App', ['ionic','ngStorage', 'ngCordova','firebase','ngMessages'])
+angular.module('App', ['ionic','ngStorage', 'ngCordova','firebase','ngMessages', 'ngFileUpload' ])
 .config(function($stateProvider, $urlRouterProvider) {
 $stateProvider
     .state('login', {
@@ -21,7 +21,15 @@ $stateProvider
       url: '/home',
       templateUrl: 'views/home/home.html',
       controller:'homeController'
+      
     })
+    .state('upload', {
+      url: '/upload',
+      templateUrl: 'views/uploadImage/upload.html',
+      controller:'uploadController'
+      
+    })
+
 
     .state('ticket', {
       url: '/ticket',
@@ -42,6 +50,12 @@ $stateProvider
       controller: 'profileController'
     })
 
+    .state('editTicket', {
+      url: '/edit/:ticket_id',
+      templateUrl: 'views/editTicket/editTicket.html',
+      controller: 'editTicketController'
+    })
+
 $urlRouterProvider.otherwise("/login");
 })
 // Changue this for your Firebase App URL.
@@ -56,5 +70,6 @@ $urlRouterProvider.otherwise("/login");
     if(window.StatusBar) {
       StatusBar.styleDefault();
     }
-  });
+  })
+
 });

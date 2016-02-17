@@ -11,6 +11,7 @@ angular.module('App').controller('homeController', function ($scope, $state,$cor
 
   $scope.logOut = function () {
       Auth.logout();
+      window.localStorage.clear()
       $location.path("/login");
   }
 
