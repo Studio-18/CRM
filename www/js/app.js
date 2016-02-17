@@ -30,6 +30,13 @@ $stateProvider
       
     })
 
+    .state('view', {
+      url: '/view',
+      templateUrl: 'views/viewImage/viewImage.html',
+      controller:'imageViewController'
+      
+    })
+
 
     .state('ticket', {
       url: '/ticket',
