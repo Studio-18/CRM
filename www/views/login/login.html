@@ -1,8 +1,9 @@
-<ion-view view-title="Studio18 ticket system" hide-back-button="true">
+<ion-view view-title="Studio 18 Client Tickets" hide-back-button="true">
         <ion-content class="padding-top testBack">
           <div class=" text-center padding">
             <!-- <i class="icon ion-ios-game-controller-b larger positive"></i> -->
             <img class="icon18" src="img/superman.png">
+            <h1>All the Problems!</h1>
           </div>
           <form class="form-style-6" novalidate name="loginForm" ng-submit="loginForm.$valid && signIn(user)">
           <div class="">
@@ -22,10 +23,7 @@
             </div>
             <label class="" ng-class="{ 'has-error-lr' : loginForm.txtPassword.$invalid && loginForm.$submitted }">
               <!-- <span class="input-label">Password</span> -->
-              <input name="txtPassword" type="password" ng-model="user.password" placeholder="Password"
-              ng-minlength="5"
-              ng-maxlength="30"
-              required>
+              <input name="txtPassword" type="password" ng-model="user.password" placeholder="Password" ng-minlength="5" ng-maxlength="30" required>
             </label>
             <!-- Edit this messages if you want -->
             <div class="form-errors" ng-messages="loginForm.txtPassword.$error" ng-if="loginForm.$submitted">
