@@ -41,6 +41,7 @@ angular.module('App')
             ctx.strokeStyle = "#222222";
             ctx.lineWith = 2;
             ctx.drawImage(img, 10, 10);
+            $scope.showCanvas = true
 
             var flag = false
             var prevX = 0
@@ -49,7 +50,7 @@ angular.module('App')
             var currY = 0
             var dot_flag = false
             // var x = "black"
-            var y = 2
+            // var y = 2
 
             w = canvas.width;
             h = canvas.height;
@@ -197,6 +198,9 @@ function findxy(res, e) {
               var id = root.child('/images').push()
 
                 id.set(ticket)
+
+
+                Utils.submitted();
         
 
       //         .then(function(response ){

@@ -2,6 +2,20 @@ angular.module('App').factory('Utils', function($ionicLoading,$ionicPopup) {
 
 	var Utils = {
 
+
+    submitted: function(){
+       $ionicLoading.show({
+        animation: 'fade-in',
+        showBackdrop: true,
+        maxWidth: 400,
+        
+         // template: '<p>thank you for submitting a 
+         // ticktet we will correct this issue as soon as possible</p>'
+      });
+      
+   
+    },
+
     show: function() {
       $ionicLoading.show({
   	    animation: 'fade-in',

@@ -5,7 +5,12 @@ console.log('controller working')
 
   vm = this
   console.log('working')
+  console.log($scope.myVariable)
 
+
+  $scope.hello = function(){
+    console.log('hello')
+  }
 
   
 
@@ -13,7 +18,7 @@ console.log('controller working')
     
     var ticket = {}
     ticket.feature  = this.ticket.feature
-    ticket.project_code   = this.ticket.project_code
+    ticket.project_code   = window.localStorage.project_code
     ticket.message    = this.ticket.message
     ticket.created_at = Date.now()
     ticket.user       = window.localStorage.id 
@@ -43,11 +48,17 @@ console.log('controller working')
         Auth.current = name
         console.log(Auth.current)
 
+
       }
     })
     
-
-    $location.path('/viewTicket');
+    if ($scope.myVariable === "bigtest"){
+      $location.path('/upload');
+    }
+    else {
+      $location.path('/viewTicket');
+    }
+    
 
 
 

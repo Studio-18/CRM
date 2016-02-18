@@ -1,6 +1,9 @@
 <ion-view>
-  <ion-content >
-      <div id="direct_upload" 
+  <ion-content scroll="false">
+    
+    <div ng-hide="showCanvas">
+        <h2>Step 1: Upload an image</h2>
+        <div id="direct_upload" 
         ngf-drop="uploadFiles($files)"
         ngf-drag-over-class="dragOverClass($event)"
         ng-model="files"
@@ -17,11 +20,7 @@
       <i ng-show="myForm.file.$error.required">*required</i><br>
       <i ng-show="myForm.file.$error.maxSize">File too large 
           {{errorFiles[0].size / 1000000|number:1}}MB: max 2M</i>
-      <img id="testImage" width="200px" height="auto" ng-show="myForm.file.$valid" ngf-thumbnail="picFile" class="thumb"> <button ng-click="picFile = null" ng-show="picFile">Remove</button>
-      <br>
-      <button ng-disabled="!myForm.$valid" 
-              
-              ng-click="editFiles(picFile)">Submit</button>
+       
       <span class="progress" ng-show="picFile.progress >= 0">
         <div style="width:{{picFile.progress}}%" 
             ng-bind="picFile.progress + '%'"></div>
@@ -31,23 +30,41 @@
     </fieldset>
     <br>
   </form> 
+  <img id="testImage" width="400px" height="auto" ng-show="myForm.file.$valid" ngf-thumbnail="picFile" class="thumb">
+  <br>
+  <button class="button"ng-click="picFile = null" ng-show="picFile">Remove</button>
+      
+      <button class="button" ng-hide="!myForm.$valid" 
+              
+              ng-click="editFiles(picFile)">Step 2: Edit Image</button>
 </div>
+      
 
-<p>Canvas:</p>
+    </div>
+      
+
+<div ng-show="showCanvas">
+    <h2>Step 2: Draw on Image </h2>
+    <h4>indicate where issues are</h4>
+    <hr>
 <div class="container">
     
-      <a class="button" id="green" ng-click="color('green')">Green</a>
-      <a class="button" id="blue" ng-click="color('blue')">Blue</a>
-      <a class="button" id="red" ng-click="color('red')">Red</a>
-      <a class="button" id="red" ng-click="erase()">Erase</a>
-      <a class="button" id="red" ng-click="save()">Save</a>
+      <a class="button" id="green" ng-click="color('green')"><i class="ion ion-edit edit-green"></i>  Green</a>
+      <a class="button" id="blue" ng-click="color('blue')"><i class="ion ion-edit edit-blue"></i> Blue</a>
+      <a class="button" id="red" ng-click="color('red')"><i class="ion ion-edit edit-red"></i> Red</a>
+      <a class="button"  ng-click="erase()"><i class="ion ion-trash-a"></i> Erase</a>
+      <a class="button"  ng-click="save()"><i class="ion ion-document"></i> Save</a>
   </div>  
-<canvas id="myCanvas" width="400" height="400" style="border:1px solid #d3d3d3;">
+<canvas id="myCanvas" style="background-color: white" width="400" height="500" style="border:1px solid #d3d3d3;">
 
 
 </canvas>
 
 <img id="canvasimg" ">
+  
+
+</div>
+
 
 
 
