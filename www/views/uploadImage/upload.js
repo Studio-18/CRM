@@ -1,5 +1,5 @@
 angular.module('App')
-.controller('uploadController', function ($scope, $state,$cordovaOauth, $localStorage, $location,$http,$ionicPopup, $firebaseObject, Auth, FURL, Utils, Upload) {
+.controller('uploadController', function ($scope, $timeout, $state,$cordovaOauth, $localStorage, $location,$http,$ionicPopup, $firebaseObject, Auth, FURL, Utils, Upload) {
         var x = "black"
 
         $scope.color =  function(obj) {
@@ -34,6 +34,10 @@ angular.module('App')
 
 }
 
+        
+
+
+
         $scope.editFiles = function() {
             var canvas = document.getElementById("myCanvas");
             var ctx = canvas.getContext("2d");
@@ -50,7 +54,7 @@ angular.module('App')
             var currY = 0
             var dot_flag = false
             // var x = "black"
-            // var y = 2
+             var y = 2
 
             w = canvas.width;
             h = canvas.height;
@@ -199,8 +203,39 @@ function findxy(res, e) {
 
                 id.set(ticket)
 
+var myPopup = $ionicPopup.show({
+    template: '<p>thanks for the input</p>',
+    title: 'thanks for the input',
+    subTitle: 'we will get back to you shortly',
+    scope: $scope,
+    
+  });
 
-                Utils.submitted();
+  myPopup.then(function(res) {
+    console.log('Tapped!', res);
+  });
+
+  $timeout(function() {
+     myPopup.close(); //close the popup after 3 seconds for some reason
+     $location.path('/viewTicket');
+  }, 3000);
+ 
+
+
+
+     //            var alertPopup = $ionicPopup.alert({
+     //   title: 'thank you for submitting request',
+     //   template: 'It might taste good',
+     //   showBackdrop: false
+     // });
+     // alertPopup.then(function(res) {
+     //   console.log('Thank you for not eating my delicious ice cream cone');
+     // });
+
+
+
+
+
         
 
       //         .then(function(response ){
@@ -218,4 +253,6 @@ function findxy(res, e) {
 
 
     }
+
+
 })

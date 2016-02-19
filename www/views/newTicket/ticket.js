@@ -5,17 +5,16 @@ console.log('controller working')
 
   vm = this
   console.log('working')
-  console.log($scope.myVariable)
 
 
-  $scope.hello = function(){
-    console.log('hello')
-  }
+
+
 
   
 
-  $scope.newTicket = function() {
-    
+  $scope.newTicket = function($scope) {
+   
+
     var ticket = {}
     ticket.feature  = this.ticket.feature
     ticket.project_code   = window.localStorage.project_code
@@ -25,6 +24,17 @@ console.log('controller working')
     ticket.status     = "new"
     ticket.priority   = this.ticket.priority
     ticket.created_by = window.localStorage.user
+
+
+    var tickets = {}
+    // ticket.image = this.ticket.image
+    tickets.image = this.tickets.image
+
+
+
+    console.log(tickets.image)
+ 
+    
     
 
 
@@ -34,6 +44,8 @@ console.log('controller working')
      console.log(whats)
 
    })
+
+
 
   
     var root = new Firebase('https://authapp1.firebaseio.com');
@@ -52,12 +64,14 @@ console.log('controller working')
       }
     })
     
-    if ($scope.myVariable === "bigtest"){
-      $location.path('/upload');
-    }
-    else {
-      $location.path('/viewTicket');
-    }
+     // if (feature==='Bob'){
+     //  console.log(feature)
+     //   $location.path('/viewTicket');
+     //   feature= ''
+     // }
+     // else {
+     //   $location.path('/upload');
+     // }
     
 
 
@@ -68,7 +82,13 @@ console.log('controller working')
 //   console.log("The read failed: " + errorObject.code);
 // });
 
-
+    if (tickets.image == 'true') {
+      
+      $location.path('/upload');
+    } else if (tickets.image == 'false')  {
+      
+      $location.path('/viewTicket');
+    }
 
 
   }

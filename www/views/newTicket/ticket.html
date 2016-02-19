@@ -11,6 +11,18 @@
       <label class="item item-input">
         <textarea style="color:black" placeholder="Describe the issue " ng-model="ticket.message"></textarea>
       </label>
+
+      <!-- <ion-list>
+
+      <ion-checkbox ng-model="tickets.image"  ng-false-value="iWish">image</ion-checkbox>
+      
+      
+
+</ion-list> -->
+
+
+
+
       <label class="item item-input item-select">
         <div style="color:black" class="input-label">
           Priority of the problem
@@ -23,9 +35,23 @@
         </select>
       </label>
 
+      <ion-list>
+      <label class="item item-input item-select">
+        <div style="color:black" class="input-label">
+          images to upload
+        </div>
+        <select ng-model="tickets.image">
+          <option value="true">Yes</option>
+          <option value="false">No</option>
+          
+        </select>
+      </label>
+      </ion-list>
+
 </div>
-<button class="button button-calm" type="submit">Submit Ticket</button>
-<button class="button button-balanced"  type="submit" ng-href='#/upload'>Attach Image</button>
+
+
+<button class="button button-balanced" ng-inti type="submit" >Submit</button>
     
 
   </form>

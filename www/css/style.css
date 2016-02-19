@@ -2,6 +2,10 @@
 
 /* Empty. Add your own CSS if you like */
 
+.popup-body {
+  background-color: grey;
+}
+
 .edit-green {
   color: green;
 }
