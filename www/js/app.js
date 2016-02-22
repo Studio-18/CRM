@@ -48,7 +48,7 @@ $stateProvider
     .state('viewTicket', {
       url: '/viewTicket',
       templateUrl: 'views/viewTicket/viewTicket.html',
-      controller: 'viewTicketController'
+      controller: 'viewTicketController as viewTicketController'
     })
 
     .state('profile', {

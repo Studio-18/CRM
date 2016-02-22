@@ -63,7 +63,7 @@
           <div class="col">Dev Comment</div>
           <div class="col col-10"></div>
         </div>
-        <div class="row" ng-repeat="message in messages | orderBy:sortType:sortReverse| filter: searchMessage">
+        <div class="row" ng-repeat="message in viewTicketController.messages | orderBy:sortType:sortReverse| filter: searchMessage">
 
           <div class="col col-20">{{message.created_at | date : "MM/dd/yyyy" }}</div>
           <div class="col col-10">{{message.status}}</div>
@@ -74,7 +74,7 @@
           <div class="col col-10">
                
                 <a class="button button-small button-calm" ng-href="#/edit/{{message.$id}}">Edit</a>
-                <a class="button button-small button-energized" ng-href="#/view">View</a>
+                <a class="button button-small button-energized" ng-href="#/edit/{{message.$id}}">View</a>
         </div>
 
   </ion-content>
