@@ -20,7 +20,7 @@ $stateProvider
     .state('home', {
       url: '/home',
       templateUrl: 'views/home/home.html',
-      controller:'homeController'
+      controller:'homeController as homeController'
       
     })
     .state('upload', {
