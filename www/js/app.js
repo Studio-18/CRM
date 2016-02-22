@@ -54,7 +54,7 @@ $stateProvider
     .state('profile', {
       url: '/profile',
       templateUrl: 'views/profile/profile.html',
-      controller: 'profileController'
+      controller: 'profileController as profileController'
     })
 
     .state('editTicket', {

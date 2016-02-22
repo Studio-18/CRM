@@ -1,25 +1,17 @@
 <ion-view view-title=" {{email}} profile">
   <ion-content>
 
-  <div class="list">
-
-    <a class="item item-avatar" href="#">
-      <img ng-src="{{gravatar}}"> 
-      <h2>user</h2>
-      <p>content goes here</p>
-    </a>
+    <div class="list">
+      <a class="item item-avatar" href="#">
+        <img ng-src="{{profileController.gravatar}}"> 
+        <h2>user</h2>
+        <p>content goes here</p>
+      </a>
   
-  <div class="item">
-    <p>email :  {{email}}</p>
-  </div>
-  </div>
-
-  <img src="http://res.cloudinary.com/dsduoklii/image/upload/v1455738266/vagh2xtcpbcxs8lnfig5.png">
- 
-  
-  
-
-
+      <div class="item">
+        <p>email :  {{profileController.email}}</p>
+      </div>
+    </div>
 
   </ion-content>
 </ion-view>
