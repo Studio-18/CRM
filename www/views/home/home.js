@@ -4,7 +4,7 @@ angular.module('App').controller('homeController', function ($scope, $state,$cor
 
     
       ref.orderByChild('id').equalTo(window.localStorage.id).on('value', function(snapshot){
-        console.log(snapshot.val())
+        console.table(snapshot.val())
       })
       
   

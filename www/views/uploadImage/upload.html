@@ -2,77 +2,60 @@
   <ion-content scroll="false">
     
     <div ng-hide="showCanvas">
-        <h2>Step 1: Upload an image</h2>
+      <h2>Step 1: Upload an image</h2>
         <div id="direct_upload" 
-        ngf-drop="uploadFiles($files)"
-        ngf-drag-over-class="dragOverClass($event)"
-        ng-model="files"
-        ng-multiple="true">
+          ngf-drop="uploadController.uploadFiles($files)"
+          ngf-drag-over-class="dragOverClass($event)"
+          ng-model="files"
+          ng-multiple="true">
     
         <form name="myForm">
-        <fieldset>
-      
-      
-      
-      <input type="file" ngf-select ng-model="picFile" name="file"    
-             accept="image/*" ngf-max-size="2MB" required
-             ngf-model-invalid="errorFiles">
-      <i ng-show="myForm.file.$error.required">*required</i><br>
-      <i ng-show="myForm.file.$error.maxSize">File too large 
-          {{errorFiles[0].size / 1000000|number:1}}MB: max 2M</i>
+          <fieldset>
+            <input type="file" ngf-select ng-model="picFile" name="file"    
+              accept="image/*" ngf-max-size="2MB" required
+              ngf-model-invalid="errorFiles">
+            <!-- <i ng-show="myForm.file.$error.required">*required</i><br> -->
+            <i ng-show="myForm.file.$error.maxSize">File too large 
+              {{errorFiles[0].size / 1000000|number:1}}MB: max 2M</i>
        
-      <span class="progress" ng-show="picFile.progress >= 0">
-        <div style="width:{{picFile.progress}}%" 
-            ng-bind="picFile.progress + '%'"></div>
-      </span>
-      <span ng-show="picFile.result">Upload Successful</span>
-      <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
-    </fieldset>
-    <br>
-  </form> 
-  <img id="testImage" width="400px" height="auto" ng-show="myForm.file.$valid" ngf-thumbnail="picFile" class="thumb">
-  <br>
-  <button class="button"ng-click="picFile = null" ng-show="picFile">Remove</button>
+            <span class="progress" ng-show="picFile.progress >= 0">
+              <div style="width:{{picFile.progress}}%" 
+                ng-bind="picFile.progress + '%'">
+              </div>
+            </span>
+            <span ng-show="picFile.result">Upload Successful</span>
+            <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
+          </fieldset>
+          <br>
+        </form> 
+  
+        <img id="testImage" width="400px" height="auto" ng-show="myForm.file.$valid" ngf-thumbnail="picFile" class="thumb">
+        <br>
+        <button class="button"ng-click="picFile = null" ng-show="picFile">Remove</button>
       
-      <button class="button" ng-hide="!myForm.$valid" 
-              
-              ng-click="editFiles(picFile)">Step 2: Edit Image</button>
-</div>
-      
-
+        <button class="button" ng-hide="!myForm.$valid" 
+          ng-click="uploadController.editFiles(picFile)">Step 2: Edit Image</button>
+      </div>
     </div>
       
+    <div ng-show="showCanvas">
+      <h2>Step 2: Draw on Image </h2>
+      <h4>indicate where issues are</h4>
+      <hr>
 
-<div ng-show="showCanvas">
-    <h2>Step 2: Draw on Image </h2>
-    <h4>indicate where issues are</h4>
-    <hr>
-<div class="container">
-    
-      <a class="button" id="green" ng-click="color('green')"><i class="ion ion-edit edit-green"></i>  Green</a>
-      <a class="button" id="blue" ng-click="color('blue')"><i class="ion ion-edit edit-blue"></i> Blue</a>
-      <a class="button" id="red" ng-click="color('red')"><i class="ion ion-edit edit-red"></i> Red</a>
-      <a class="button"  ng-click="erase()"><i class="ion ion-trash-a"></i> Erase</a>
-      <a class="button"  ng-click="save()"><i class="ion ion-document"></i> Save</a>
-  </div>  
-<canvas id="myCanvas" style="background-color: white" width="400" height="500" style="border:1px solid #d3d3d3;">
+      <div class="container">
+        <a class="button" id="green" ng-click="uploadController.color('green')"><i class="ion ion-edit edit-green"></i>  Green</a>
+        <a class="button" id="blue" ng-click="uploadController.color('blue')"><i class="ion ion-edit edit-blue"></i> Blue</a>
+        <a class="button" id="red" ng-click="uploadController.color('red')"><i class="ion ion-edit edit-red"></i> Red</a>
+        <a class="button"  ng-click="uploadController.erase()"><i class="ion ion-trash-a"></i> Erase</a>
+        <a class="button"  ng-click="uploadController.save()"><i class="ion ion-document"></i> Save</a>
+      </div>  
 
+      <canvas id="myCanvas" style="background-color: white" width="400" height="500" 
+        style="border:1px solid #d3d3d3;">
+      </canvas>
 
-</canvas>
-
-<img id="canvasimg" ">
-  
-
-</div>
-
-
-
-
-
-
-
-
-
+      <!-- <img id="canvasimg"> -->
+    </div>
   </ion-content>
-
 </ion-view>

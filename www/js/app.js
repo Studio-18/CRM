@@ -26,7 +26,7 @@ $stateProvider
     .state('upload', {
       url: '/upload',
       templateUrl: 'views/uploadImage/upload.html',
-      controller:'uploadController'
+      controller:'uploadController as uploadController'
       
     })
 
