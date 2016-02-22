@@ -41,7 +41,7 @@ $stateProvider
     .state('ticket', {
       url: '/ticket',
       templateUrl: 'views/newTicket/ticket.html',
-      controller: 'ticketController'
+      controller: 'ticketController as ticketController'
 
     })
 

@@ -1,15 +1,15 @@
 <ion-view view-title="New Ticket">
   <ion-content>
-  <form ng-submit="newTicket()">
+  <form ng-submit="ticketController.newTicket()">
     <div class="list list-inset">
       <label class="item item-input">
-        <input type="text" placeholder="feature causing problem" ng-model="ticket.feature">
+        <input type="text" placeholder="feature causing problem" ng-model="ticketController.ticket.feature">
       </label>
       <!-- <label class="item item-input">
         <input type="text" placeholder="Project Code" ng-model="ticket.project_code">
       </label> -->
       <label class="item item-input">
-        <textarea style="color:black" placeholder="Describe the issue " ng-model="ticket.message"></textarea>
+        <textarea style="color:black" placeholder="Describe the issue " ng-model="ticketController.ticket.message"></textarea>
       </label>
 
       <!-- <ion-list>
@@ -27,7 +27,7 @@
         <div style="color:black" class="input-label">
           Priority of the problem
         </div>
-        <select ng-model="ticket.priority">
+        <select ng-model="ticketController.ticket.priority">
           <option value="urgent">Urgent</option>
           <option value="high">High</option>
           <option value="medium">Medium</option>
@@ -40,7 +40,7 @@
         <div style="color:black" class="input-label">
           images to upload
         </div>
-        <select ng-model="tickets.image">
+        <select ng-model="ticketController.tickets.image">
           <option value="true">Yes</option>
           <option value="false">No</option>
           
