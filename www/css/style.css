@@ -1,6 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Ubuntu);
 
 /* Empty. Add your own CSS if you like */
+.item p {
+  color: #B2B2B2;
+}
 
 .popup-body {
   background-color: grey;
