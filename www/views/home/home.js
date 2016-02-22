@@ -4,7 +4,7 @@ angular.module( 'App' )
     var vm = this
     var ref = new Firebase( 'https://authapp1.firebaseio.com/profile' )
 
-    ref.orderByChild( 'id' ).equalTo( window.localStorage.id ).on( 'value', function( snapshot {
+    ref.orderByChild( 'id' ).equalTo( window.localStorage.id ).on( 'value', function( snapshot ) {
       console.table( snapshot.val() )
     })
       

@@ -1,31 +1,27 @@
 <ion-view view-title="Dashboard" hide-back-button="true">
-        <ion-content class="padding-top">
+  <ion-content class="padding-top">
           
-          <div class="list list-inset">
-            <div class="item item-divider">
-              User Dashboard
-            </div>
-            <a class="item" href="#/ticket" class="button button-positive">
-              <i class="icon ion-plus-round"></i> Add New Ticket
-            </a>
+    <div class="list list-inset">
+      <div class="item item-divider">
+        User Dashboard
+      </div>
 
-            <a class="item" href="#/viewTicket" class="button button-positive">
-              <i class="icon ion-eye"></i> View Tickets
-            </a>
+      <a class="item" href="#/ticket" class="button button-positive">
+        <i class="icon ion-plus-round"></i> Add New Ticket
+      </a>
 
-            <a class="item" href="#/profile" class="button">
-              <i class="icon ion-ios-gear"></i> View Profile
-            </a>
+      <a class="item" href="#/viewTicket" class="button button-positive">
+        <i class="icon ion-eye"></i> View Tickets
+      </a>
 
-            <a class="item" ng-click="homeController.logOut()" class="button button-positive">
-              <i class="icon ion-log-out"></i> Logout
-            </a>
+      <a class="item" href="#/profile" class="button">
+        <i class="icon ion-ios-gear"></i> View Profile
+      </a>
 
+      <a class="item" ng-click="homeController.logOut()" class="button button-positive">
+        <i class="icon ion-log-out"></i> Logout
+      </a>
 
-
-          </div>
-          
-
-          
-        </ion-content>
+    </div>      
+  </ion-content>
 </ion-view>
