@@ -60,7 +60,7 @@ $stateProvider
     .state('editTicket', {
       url: '/edit/:ticket_id',
       templateUrl: 'views/editTicket/editTicket.html',
-      controller: 'editTicketController'
+      controller: 'editTicketController as editTicketController'
     })
 
 $urlRouterProvider.otherwise("/login");
