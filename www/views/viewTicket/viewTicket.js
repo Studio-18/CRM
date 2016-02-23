@@ -17,6 +17,7 @@ angular.module( 'App' )
       console.log(hello)
 
     vm.messages = hello    
+    
   })
 
   

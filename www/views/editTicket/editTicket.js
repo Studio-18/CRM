@@ -27,6 +27,23 @@ angular.module( 'App' )
       ticket.status      = this.ticket.status
       console.log(ticket.devMessage)
 
+      console.log(ticket.status)
+
+      if (ticket.status === "Completed") {
+        var ref = new Firebase(refPath)
+          ref.update({
+        'devMessage' : ticket.devMessage,
+        'status' : ticket.status,
+        'completed' : true
+        })
+      } else {
+        var ref = new Firebase(refPath)
+          ref.update({
+        'devMessage' : ticket.devMessage,
+        'status' : ticket.status
+        
+      })
+      }
       var ref = new Firebase(refPath)
       ref.update({
         'devMessage' : ticket.devMessage,

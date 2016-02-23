@@ -28,7 +28,7 @@ angular.module( 'App' )
     var ref3 = new Firebase( refImage1 )
     var images = $firebaseArray(ref3)
       console.log(images)
-     $scope.images = images
+      $scope.images = images
 
     //update the comments
     vm.update = function(){

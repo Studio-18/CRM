@@ -141,12 +141,16 @@ angular.module( 'App' )
           }
         })
         .success(function ( data ) {
+          $scope.hello = false
+          $scope.picFile = []
+          console.log($scope.picFile)
           console.log( 'working' )
           console.log( data )
           console.log( data.url )
           var ticket = {}
           ticket.image = data.url
           console.log( ticket.image )
+          
 
           //store reference in firebase on the ticket id
           var hel = "https://authapp1.firebaseio.com/message_list/"
@@ -157,19 +161,43 @@ angular.module( 'App' )
           var root = new Firebase( root1 )
           var id = root.child( '/images' ).push( )
 
+
           id.set( ticket )
 
           //if save is successful a popup will appear
-          var myPopup = $ionicPopup.show({
-            template: '<p>Thanks for the Feedback</p>',
-            title: 'thanks for the input',
-            subTitle: 'we will get back to you shortly',
-            scope: $scope,
-        })
+        //   var myPopup = $ionicPopup.show({
+        //     template: '<p>Thanks for the Feedback</p>',
+        //     title: 'thanks for the input',
+        //     subTitle: 'we will get back to you shortly',
+        //     scope: $scope,
+        // })
 
-          myPopup.then( function( res ) {
-          console.log( 'popped', res )
-        })
+        //   myPopup.then( function( res ) {
+        //   console.log( 'popped', res )
+        // })
+
+        // A confirm dialog
+   
+     var confirmPopup = $ionicPopup.confirm({
+       title: 'Image Uploader',
+       template: 'Do You want to upload another file?'
+     });
+     confirmPopup.then(function(res) {
+       if(res) {
+          var canvas = document.getElementById( "myCanvas" )
+      var ctx = canvas.getContext( "2d" )
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          
+          $scope.showCanvas = false
+         vm.uploadAgain()
+       } else {
+         $location.path( '/viewTicket' )
+       }
+     })
+  
+
+
+
 
         //function to make popup close after 1.5s
         $timeout( function( ) {
@@ -179,6 +207,10 @@ angular.module( 'App' )
  
         }).error( function ( data ) {
       })
+    }
+
+    vm.uploadAgain = function(){
+      console.log('this works')
     }
 
 })
