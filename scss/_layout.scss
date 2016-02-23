@@ -1,0 +1,223 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu);
+
+body {
+     font-family: 'Ubuntu', sans-serif;
+   color: #ffffff;
+   text-align: center;
+ }
+ 
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6,
+ .h1,
+ .h2,
+ .h3,
+ .h4,
+ .h5,
+ .h6 {
+   color: #ffffff;
+   font-family: 'Ubuntu', sans-serif;
+ }
+ 
+ .pane,
+ .view {
+   background-color: #6E8898;
+ }
+ 
+ .bar.bar-positive {
+   background-image: none;
+   border: none;
+ }
+ 
+ .tabs-positive > .tabs,
+ .tabs.tabs-positive {
+   background-color: #2e3f53;
+ }
+ 
+ .tabs-striped .tabs {
+   border-color: #445569;
+ }
+ 
+ .tab-item.tab-item-active,
+ .tab-item.active,
+ .tab-item.activated {
+   color: #ffffff;
+ }
+ 
+ .tab-item {
+   color: #9ea1a8;
+ }
+ 
+ .tab-item.middle {
+   background-color: #519ec8;
+   border-radius: 7px;
+   color: #2e3f53;
+   opacity: 1;
+ }
+ 
+ .tabs-striped .tabs .tab-item.middle {
+   border-radius: 0;
+ }
+ 
+ .modal {
+   background-color: rgba(54, 70, 93, 0.95);
+ }
+ 
+ .modal-backdrop-bg {
+   background-color: #6E8898;
+   opacity: 0;
+ }
+ 
+ @media (min-width: 680px) {
+   .modal {
+     background-color: transparent;
+   }
+   .active .modal-backdrop-bg {
+     background-color: #6E8898;
+     opacity: 0.98;
+   }
+   .icon18 {
+     width: 30%;
+ }
+ 
+ }
+ 
+ .item,
+ .item-complex .item-content {
+   background: #2E5266;
+   color: #ffffff;
+   text-align: left;
+   border-color: #2E5266;
+ }
+ 
+ .item *,
+ .item-complex .item-content * {
+   color: #ffffff;
+ }
+ 
+ .item.active,
+ .item.activated,
+ .item-complex.active .item-content,
+ .item-complex.activated .item-content,
+ .item .item-content.active,
+ .item .item-content.activated {
+   border-color: #445569;
+   background-color: #445569;
+ }
+ 
+ .card .item,
+ .item.item-input {
+   background-color: #ffffff;
+   color: #444;
+ }
+ 
+ .card {
+   margin: 0 0 20px 0;
+ }
+ 
+ .profile-banner {
+   background-image: url(http://ioniconf.com/img/bg.jpg);
+   background-position: center center;
+   background-repeat: no-repeat;
+   padding: 20px 0;
+ }
+ 
+ .profile-banner img {
+   display: block;
+   margin: auto;
+   border: 5px solid #FFF;
+   width: 200px;
+   height: 200px;
+   border-radius: 25px;
+   margin-bottom: 30px;
+ }
+ 
+ .toggle input:checked + .track {
+   background-color: #529ecc;
+   border-color: #529ecc;
+ }
+ 
+ .toggle .track {
+   background-color: #858d98;
+   border-color: #858d98;
+ }
+ 
+ .toggle .handle,
+ .toggle input:checked + .track .handle {
+   background-color: #6E8898;
+   border-color: #6E8898;
+   box-shadow: none;
+ }
+ 
+ .body-tumblr.platform-android .toggle .track {
+   background-color: #1c232b;
+   border-color: #858d98;
+ }
+ 
+ .body-tumblr.platform-android .toggle .handle {
+   background-color: #ffffff;
+   border-color: #6E8898;
+   box-shadow: none;
+ }
+ 
+ .body-tumblr.platform-android .toggle input:checked + .track {
+   background-color: rgba(81, 158, 200, 0.25);
+ }
+ 
+ .body-tumblr.platform-android .toggle input:checked + .track .handle {
+   background-color: #519ec8;
+ }
+ 
+ .sideColor .item, .item-complex .item-content {
+     background-color: #2E5266;
+ }
+ 
+ .bar.bar-stable {
+     background-color: #2E5266;
+     border-color: #2E5266;
+     color: #D3D0CB;
+ }
+ 
+ .bar.bar-stable .title {
+     color: #D3D0CB;
+ }
+ 
+ .button {
+     font-family: 'Ubuntu', sans-serif;
+ }
+
+ //misc. styles
+ .item p {
+  color: #B2B2B2;
+}
+
+.popup-body {
+  background-color: grey;
+}
+
+.larger {
+    font-size: 120px;
+}
+
+.button.button-positive {
+  border-radius:20px;
+
+}
+
+.icon18 {
+  width: 50%;
+}
+
+.new span {
+  background-color: green;
+  padding: 20px;
+  color: white;
+  border-radius: 5px;
+}
+
+.message-sort {
+  text-decoration: none;
+}

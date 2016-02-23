@@ -1,0 +1,25 @@
+/*table styling*/
+
+.header .col {
+  background-color:#4DACFF;
+}
+
+.col {
+  border: solid 1px grey;
+  border-bottom-style: none;
+  border-right-style: none;
+
+}
+
+.col:last-child {
+  border-right: solid 1px grey;
+  border-radius: 0 5px  5px 0;
+}
+
+.col:first-child {
+  border-radius:  5px 0 0 5px ;
+}
+
+.row:last-child .col {
+  border-bottom: solid 1px grey;
+}
