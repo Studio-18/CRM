@@ -63,6 +63,12 @@ $stateProvider
       controller: 'editTicketController as editTicketController'
     })
 
+    .state('single', {
+      url: '/single/:ticket_id',
+      templateUrl: 'views/singleTicket/singleTicket.html',
+      controller: 'singleTicketController as singleTicketController'
+    })
+
 $urlRouterProvider.otherwise("/login");
 })
 // Changue this for your Firebase App URL.
