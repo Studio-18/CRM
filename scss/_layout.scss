@@ -184,9 +184,22 @@ body {
  .bar.bar-stable .title {
      color: #D3D0CB;
  }
+
+ .previous-title {
+  color: white;
+ }
+
+ .default-title {
+  color: white;
+ }
+
+ .ion-ios-arrow-back {
+  color: white;
+ }
  
  .button {
      font-family: 'Ubuntu', sans-serif;
+     
  }
 
  //misc. styles
@@ -220,4 +233,19 @@ body {
 
 .message-sort {
   text-decoration: none;
+}
+
+
+//colors for table 
+
+.urgent {
+  background-color: #FF2E2E !important;
+}
+
+.back-view {
+  background-color: #313030;
+}
+
+.green-header {
+  background-color: #07bb8b;
 }

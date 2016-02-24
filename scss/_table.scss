@@ -2,12 +2,17 @@
 
 .header .col {
   background-color:#4DACFF;
+  text-transform: uppercase;
+  font-weight: 600;
 }
 
 .col {
   border: solid 1px grey;
   border-bottom-style: none;
   border-right-style: none;
+  background-color: #494949;
+  color: white;
+
 
 }
 
@@ -22,4 +27,10 @@
 
 .row:last-child .col {
   border-bottom: solid 1px grey;
+}
+
+
+//edit button
+.green-edit {
+  background-color: #07bb8b;
 }

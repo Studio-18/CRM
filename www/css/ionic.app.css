@@ -9921,6 +9921,15 @@ h6,
 .bar.bar-stable .title {
   color: #D3D0CB; }
 
+.previous-title {
+  color: white; }
+
+.default-title {
+  color: white; }
+
+.ion-ios-arrow-back {
+  color: white; }
+
 .button {
   font-family: 'Ubuntu', sans-serif; }
 
@@ -9948,14 +9957,27 @@ h6,
 .message-sort {
   text-decoration: none; }
 
+.urgent {
+  background-color: #FF2E2E !important; }
+
+.back-view {
+  background-color: #313030; }
+
+.green-header {
+  background-color: #07bb8b; }
+
 /*table styling*/
 .header .col {
-  background-color: #4DACFF; }
+  background-color: #4DACFF;
+  text-transform: uppercase;
+  font-weight: 600; }
 
 .col {
   border: solid 1px grey;
   border-bottom-style: none;
-  border-right-style: none; }
+  border-right-style: none;
+  background-color: #494949;
+  color: white; }
 
 .col:last-child {
   border-right: solid 1px grey;
@@ -9966,6 +9988,9 @@ h6,
 
 .row:last-child .col {
   border-bottom: solid 1px grey; }
+
+.green-edit {
+  background-color: #07bb8b; }
 
 .form-style-6 {
   max-width: 800px;
