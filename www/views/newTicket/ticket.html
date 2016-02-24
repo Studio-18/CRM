@@ -1,34 +1,42 @@
 <ion-view view-title="New Ticket">
   <ion-content>
-  <form ng-submit="newTicket()">
-    <div class="list">
-      <label class="item item-input">
-        <input type="text" placeholder="feature" ng-model="ticket.feature">
-      </label>
-      <label class="item item-input">
-        <input type="text" placeholder="Project Code" ng-model="ticket.project_code">
-      </label>
-      <label class="item item-input">
-        <textarea placeholder="Comments" ng-model="ticket.message"></textarea>
-      </label>
-      <label class="item item-input item-select">
-        <div class="input-label">
-          Priority
-        </div>
-        <select ng-model="ticket.priority">
-          <option value="urgent">Urgent</option>
-          <option value="high">High</option>
-          <option value="medium">Medium</option>
-          <option value="low">Low</option>
-        </select>
-      </label>
+    <form ng-submit="ticketController.newTicket()">
+      <div class="list list-inset">
+        <label class="item item-input">
+          <input type="text" placeholder="feature causing problem" ng-model="ticketController.ticket.feature">
+        </label>
+        
+        <label class="item item-input">
+          <textarea style="color:black" placeholder="Describe the issue " ng-model="ticketController.ticket.message"></textarea>
+        </label>
 
-</div>
-<button class="button button-calm" type="submit">Submit Ticket</button>
-    
+        <label class="item item-input item-select">
+          <div style="color:black" class="input-label">
+            Priority of the problem
+          </div>
+          <select ng-model="ticketController.ticket.priority">
+            <option value="urgent">Urgent</option>
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+          </select>
+        </label>
 
-  </form>
-    
+        <ion-list>
+          <label class="item item-input item-select">
+            <div style="color:black" class="input-label">
+            images to upload
+            </div>
+            <select ng-model="ticketController.tickets.image">
+              <option value="true">Yes</option>
+              <option value="false">No</option>
+            </select>
+          </label>
+        </ion-list>
 
+      </div>
+
+      <button class="button button-balanced" ng-inti type="submit" >Submit</button>
+    </form>
   </ion-content>
 </ion-view>

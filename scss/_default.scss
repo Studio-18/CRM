@@ -1,0 +1,41 @@
+/** Error Messages **/
+
+/** Styling for the username field **/
+label.item.has-error {
+  border-bottom: 2px solid black;
+}
+
+/** Styling for the password field when an error exists**/
+label.item.has-error-lr {
+  border-bottom: 2px solid black;
+}
+
+/** Styling for the password field when an error has been resolved**/
+label.item.valid-lr {
+  border-left: 2px solid green;
+  border-right: 2px solid green;
+}
+
+/** Styling for the error text and container **/
+.form-errors {
+  margin: 5px 0
+}
+.form-error {
+  padding: 2px 0 2px 16px;
+  color: black;
+}
+
+.testBack {
+ background: -moz-radial-gradient(center, ellipse cover, #b2b2b2 0%, #636363 100%); /* FF3.6-15 */
+background: -webkit-radial-gradient(center, ellipse cover, #b2b2b2 0%,#636363 100%); /* Chrome10-25,Safari5.1-6 */
+background: radial-gradient(ellipse at center, #b2b2b2 0%,#636363 100%);
+}
+
+.blue-button {
+   background: -moz-linear-gradient(top, #87e0fd 0%, #53cbf1 40%, #07a0f2 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #87e0fd 0%,#53cbf1 40%,#07a0f2 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #87e0fd 0%,#53cbf1 40%,#07a0f2 100%);
+border-radius: 10px;
+border-bottom: 0px;
+
+}

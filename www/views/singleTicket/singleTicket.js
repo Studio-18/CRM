@@ -1,7 +1,6 @@
 angular.module( 'App' )
-  .controller( 'editTicketController', function ( $scope, $state, $stateParams,$cordovaOauth, $localStorage, $location,$http,$ionicPopup, $firebaseObject, Auth, FURL, Utils ) {
-    console.log( 'editTicketController working' )
-    console.log( 'passed params :', $stateParams )
+  .controller( 'singleTicketController', function ( $scope, $stateParams, $state,$cordovaOauth, $localStorage, $location,$http,$ionicPopup, $firebaseObject,$firebaseArray, Auth, FURL, Utils ) {
+    console.log( 'controller working' )
 
     var vm = this
 
@@ -16,7 +15,20 @@ angular.module( 'App' )
     console.log(snapshot.val())
     vm.message = snapshot.val()
     console.log(vm.message)
+    // console.log(vm.message.images)
+    // var hello = vm.message.images
+    // console.log(hello)
     })
+
+    var ref1 = "https://authapp1.firebaseio.com/message_list/"
+    var refImage = ref1.concat( tickId )
+    var refImage1 = (refImage + '/images/')
+    console.log(refImage1)
+
+    var ref3 = new Firebase( refImage1 )
+    var images = $firebaseArray(ref3)
+      console.log(images)
+      $scope.images = images
 
     //update the comments
     vm.update = function(){
@@ -27,23 +39,6 @@ angular.module( 'App' )
       ticket.status      = this.ticket.status
       console.log(ticket.devMessage)
 
-      console.log(ticket.status)
-
-      if (ticket.status === "Completed") {
-        var ref = new Firebase(refPath)
-          ref.update({
-        'devMessage' : ticket.devMessage,
-        'status' : ticket.status,
-        'completed' : true
-        })
-      } else {
-        var ref = new Firebase(refPath)
-          ref.update({
-        'devMessage' : ticket.devMessage,
-        'status' : ticket.status
-        
-      })
-      }
       var ref = new Firebase(refPath)
       ref.update({
         'devMessage' : ticket.devMessage,
@@ -54,4 +49,6 @@ angular.module( 'App' )
       this.ticket.devMessage= ''
       $location.path('/viewTicket');
     }
+
+
   })

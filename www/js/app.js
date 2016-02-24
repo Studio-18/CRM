@@ -20,13 +20,13 @@ $stateProvider
     .state('home', {
       url: '/home',
       templateUrl: 'views/home/home.html',
-      controller:'homeController'
+      controller:'homeController as homeController'
       
     })
     .state('upload', {
       url: '/upload',
       templateUrl: 'views/uploadImage/upload.html',
-      controller:'uploadController'
+      controller:'uploadController as uploadController'
       
     })
 
@@ -41,26 +41,32 @@ $stateProvider
     .state('ticket', {
       url: '/ticket',
       templateUrl: 'views/newTicket/ticket.html',
-      controller: 'ticketController'
+      controller: 'ticketController as ticketController'
 
     })
 
     .state('viewTicket', {
       url: '/viewTicket',
       templateUrl: 'views/viewTicket/viewTicket.html',
-      controller: 'viewTicketController'
+      controller: 'viewTicketController as viewTicketController'
     })
 
     .state('profile', {
       url: '/profile',
       templateUrl: 'views/profile/profile.html',
-      controller: 'profileController'
+      controller: 'profileController as profileController'
     })
 
     .state('editTicket', {
       url: '/edit/:ticket_id',
       templateUrl: 'views/editTicket/editTicket.html',
-      controller: 'editTicketController'
+      controller: 'editTicketController as editTicketController'
+    })
+
+    .state('single', {
+      url: '/single/:ticket_id',
+      templateUrl: 'views/singleTicket/singleTicket.html',
+      controller: 'singleTicketController as singleTicketController'
     })
 
 $urlRouterProvider.otherwise("/login");
