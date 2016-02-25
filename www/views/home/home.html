@@ -1,5 +1,23 @@
 <ion-view view-title="Dashboard" hide-back-button="true">
   <ion-content class="padding-top">
+  <a class="button button-balanced" href="#/viewTicket">
+  <i class="ion ion-flag" style="font-size:60px"></i>
+  Open Tickets:
+  <span style="font-size:20px">{{homeController.openTicket}}</span>
+</a>
+
+
+<a class="button button-assertive" href="#/viewTicket">
+<i class="ion ion-chatbox" style="font-size:60px"></i>
+  New Messages:
+  <span style="font-size:30px">{{homeController.messageCount}}</span>
+</a>
+  <div style="margin-top:30px">
+    <canvas id="myChart" width="300" height="300"></canvas>
+    
+  </div>
+
+     
           
     <div class="list list-inset">
       <div class="item item-divider">
