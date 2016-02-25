@@ -107,7 +107,7 @@ var options = {
     segmentShowStroke: false,
     animateRotate: false,
     animateScale: false,
-    percentageInnerCutout: 50,
+    percentageInnerCutout: 70,
     tooltipTemplate: "<%= label %>"
 
 }
