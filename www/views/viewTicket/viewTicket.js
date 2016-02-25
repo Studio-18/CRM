@@ -15,9 +15,14 @@ angular.module( 'App' )
      
     var hello = $firebaseArray(ref1)
       console.log(hello)
+      console.log(hello.length)
+      for (var i=0; i<hello.length; i++) {
+        console.log(i)
+      }
 
     vm.messages = hello    
     
+
   })
 
   
