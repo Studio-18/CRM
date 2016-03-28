@@ -8,6 +8,7 @@ angular.module('App').factory('Auth', function(FURL, $firebaseAuth, $firebaseArr
 	var Auth = {
 		user: {},
     current: '',
+    statusArray: [],
 
     createProfile: function(uid, user) {
       var profile = {

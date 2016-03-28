@@ -64,6 +64,6 @@
     "commit": "678ee9a144402527dd20b23f626540c51b343969"
   },
   "_source": "git://github.com/cloudinary/pkg-cloudinary-core.git",
-  "_target": "^2.0.4",
+  "_target": "~2.0.6",
   "_originalSource": "cloudinary-core"
 }

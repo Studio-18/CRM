@@ -47,8 +47,21 @@ angular.module( 'App' )
       var ref = new Firebase(refPath)
       ref.update({
         'devMessage' : ticket.devMessage,
-        'status' : ticket.status
+        'status' : ticket.status,
+        'newMessage': true
       })
+
+      var newMessage = {}
+      newMessage.newMessage = true
+      var who = new Firebase( 'https://authapp1.firebaseio.com/profile' )
+      var who2 = who.orderByChild( 'id' ).equalTo( window.localStorage.id ).on( 'child_added', function( snapshot ){
+      var whats = ( snapshot.key() )
+      console.log( whats )
+      })
+
+      
+
+
 
       //clear form and redirect 
       this.ticket.devMessage= ''

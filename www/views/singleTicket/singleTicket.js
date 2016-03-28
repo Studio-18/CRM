@@ -31,24 +31,20 @@ angular.module( 'App' )
       $scope.images = images
 
     //update the comments
-    vm.update = function(){
-      console.log(refPath)
+    
 
       var ticket = {}
-      ticket.devMessage  = this.ticket.devMessage
-      ticket.status      = this.ticket.status
-      console.log(ticket.devMessage)
+      ticket.newMessage  = false
+      
 
       var ref = new Firebase(refPath)
       ref.update({
-        'devMessage' : ticket.devMessage,
-        'status' : ticket.status
+        'newMessage' : ticket.newMessage
+        
       })
 
-      //clear form and redirect 
-      this.ticket.devMessage= ''
-      $location.path('/viewTicket');
-    }
+     
+    
 
 
   })

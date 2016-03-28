@@ -15,6 +15,7 @@ angular.module( 'App' )
       ticket.status     = "new"
       ticket.priority   = this.ticket.priority
       ticket.created_by = window.localStorage.user
+      
 
       var tickets = { }
       // ticket.image = this.ticket.image

@@ -14,12 +14,12 @@
     </div>
 
     <div class="row header">
-      <a class="col message-sort"
+      <a class="col message-sort col-20"
         href="#" ng-click="sortType = 'created_at';sortReverse = !sortReverse">
         Date 
       </a>
             
-      <a class="col col-10 message-sort"
+      <a class="col col-20 message-sort"
         href="#" ng-click="sortType = 'status';sortReverse = !sortReverse">
         Status
       </a>
@@ -32,38 +32,38 @@
         <span ng-show="sortType == 'name'" class="fa fa-caret-down"></span>
       </a>
               
-      <a class="col message-sort"
+      <a class="col message-sort test1"
         href="#" ng-click="sortType = 'priority';sortReverse = !sortReverse">
         Priority 
       </a>
 
-      <div class="col">Dev Comment</div>
-      <div class="col col-10"></div>
+      <div class="col test1">Dev Comment</div>
+      <div class="col"></div>
     </div>
 
     <div class="row" ng-hide="message.status === 'Completed'" ng-repeat="message in viewTicketController.messages | orderBy:sortType:sortReverse| filter: searchMessage">
 
     <div class="col col-20">{{message.created_at | date : "MM/dd/yyyy" }}</div>
-    <div class="col col-10">{{message.status}}</div>
+    <div class="col col-20">{{message.status}}</div>
     <div class="col">{{message.feature}}</div>
-    <div class="{{message.priority}} col">{{message.priority}}</div>
-    <div class="col">{{message.devMessage}}</div>
-    <div class="col col-10">
+    <div class="{{message.priority}} col test1">{{message.priority}}</div>
+    <div class="col test1">{{message.devMessage}}</div>
+    <div class="col">
       <a class="button button-small green-edit" ng-href="#/edit/{{message.$id}}">Edit</a>
       <a class="button button-small button-energized" ng-href="#/single/{{message.$id}}">View</a>
     </div>
   </section>
     
     <section>
-    <h1>recently completed</h1>
+    <h3>recently completed</h3>
 
     <div class="row header">
-      <a class="col message-sort"
+      <a class="col col-20 message-sort"
         href="#" ng-click="sortType = 'created_at';sortReverse = !sortReverse">
         Date 
       </a>
             
-      <a class="col col-10 message-sort"
+      <a class="col  test1 message-sort"
         href="#" ng-click="sortType = 'status';sortReverse = !sortReverse">
         Status
       </a>
@@ -76,24 +76,24 @@
         <span ng-show="sortType == 'name'" class="fa fa-caret-down"></span>
       </a>
               
-      <a class="col message-sort"
+      <a class="col test1 message-sort"
         href="#" ng-click="sortType = 'priority';sortReverse = !sortReverse">
         Priority 
       </a>
 
       <div class="col">Dev Comment</div>
-      <div class="col col-10"></div>
+      <div class="col col-20"></div>
     </div>
 
     <div class="row" ng-show="message.status === 'Completed'" ng-repeat="message in viewTicketController.messages | orderBy:sortType:sortReverse| filter: searchMessage">
 
     <div class="col col-20">{{message.created_at | date : "MM/dd/yyyy" }}</div>
-    <div class="col col-10">{{message.status}}</div>
+    <div class="col col-10 test1">{{message.status}}</div>
     <div class="col">{{message.feature}}</div>
-    <div class="col">{{message.priority}}</div>
+    <div class="col test1">{{message.priority}}</div>
     <div class="col">{{message.devMessage}}</div>
-    <div class="col col-10">
-      <a class="button button-small green-edit" ng-href="#/edit/{{message.$id}}">Edit</a>
+    <div class="col col-20">
+      <a class="button button-small green-edit test1" ng-href="#/edit/{{message.$id}}">Edit</a>
       <a class="button button-small button-energized" ng-href="#/single/{{message.$id}}">View</a>
     </div>
   </section>
