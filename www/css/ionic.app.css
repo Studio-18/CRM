@@ -10058,6 +10058,10 @@ h6,
   border-left-style: none;
   color: #fff; }
 
+@media only screen and (max-width: 480px) {
+  .test1 {
+    display: none; } }
+
 .edit-green {
   color: green; }
 
